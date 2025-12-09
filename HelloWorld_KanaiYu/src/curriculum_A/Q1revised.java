@@ -72,7 +72,6 @@ public class Q1revised {
 		 */
 		System.out.println();
 		
-	
 	    
 	    /*
 	     * 課題8　再代入
