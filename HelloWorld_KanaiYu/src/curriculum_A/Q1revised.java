@@ -28,7 +28,6 @@ public class Q1revised {
 		 * 問題の区切りとなる改行
 		 */
 		System.out.println();
-		
 	
 	    /*
 	     * 課題6
