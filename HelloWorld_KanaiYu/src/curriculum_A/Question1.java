@@ -4,7 +4,6 @@ public class Question1 {
 	
 	public static void main(String[] args) {
 	    
-		
 		//Q1
 		//バイト型
 		byte byteNum =0;
@@ -23,7 +22,7 @@ public class Question1 {
 		//文字列型
 		String letters = null;
 		//ブーリアン型
-		boolean Boolean = false;
+		boolean sample  = false;
 		
 		/*
 		 * 問題の区切りとなる改行
@@ -49,7 +48,7 @@ public class Question1 {
 		//文字列型
 		letters = "ハロー";
 		//ブーリアン型
-		Boolean = true;
+		sample = true;
 		
 		/*
 		 * 問題の区切りとなる改行
@@ -64,12 +63,12 @@ public class Question1 {
 		//20を出力/
 		System.out.println( floatNum + doubleNum ); 
 		//a ハロー true　を出力
-		System.out.println( letter + letters + Boolean );
+		System.out.println( letter + letters + sample );
 		//11130を出力
 		System.out.println( byteNum + shortNum + intNum + longNum + floatNum + doubleNum );
 		//小数点以外の数字を全てかける
 		//E	（指数表記）のしたい %e%n
-	    System.out.printf("%e%n",(float) (long) ( byteNum * shortNum * intNum * longNum));
+	    System.out.printf("%e%n",(double) (long) ( byteNum * shortNum * intNum * longNum));
 	    //10.5割る100をする
 	    System.out.println( doubleNum / shortNum);
 	    //10引く100をする
