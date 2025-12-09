@@ -96,7 +96,6 @@ public class Q1revised {
 	    System.out.println("体重は"+ weight +"㎏です");
 	    System.out.println("好きな食べ物は"+ food +"です");
 	    System.out.println("BMIは" +  formattedBmiSuzuki +"です");
-
 	    
 	    /*
 		 * 問題の区切りとなる改行
