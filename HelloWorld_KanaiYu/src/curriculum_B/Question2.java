@@ -1,5 +1,7 @@
 package curriculum_B;
 
+import java.util.Scanner;
+
 public class Question2 {
 	public static void main(String[] args) {
 		
@@ -32,7 +34,7 @@ public class Question2 {
 		//3 int 型の変数 age に 18 を代入
 		age = 18;
 		//age が 20 以上なら "成人です" と表示
-		if (age >= 20 && age <= 20) {System.out.println("成人です");}
+		if (age >= 20) {System.out.println("成人です");}
 		//age が 13 以上 19 以下なら "ティーンエイジャーです" と表示
 		else if (age >= 13 && age <= 19) {System.out.println("ティーンエイジャーです");}
 		//age が 12 以下なら "子供です" と表示
@@ -92,13 +94,15 @@ public class Question2 {
 		
 		//Q7
 		// int 型の変数 score にコンソール入力で 0 から 100 のいずれかの数値を代入し
-		score = 85; 
+		System.out.println("0～100で点数を入力してください");
+		Scanner scanner = new Scanner(System.in); 
+		score = scanner.nextInt();  
 		//90 以上なら "優"
-		if (score > 90) {System.out.println( "優");} 
+		if (score >= 90) {System.out.println( "優");} 
 		//70 以上なら "良"
-		else if (score > 70) {System.out.println( "良");}
+		else if (score >= 70) {System.out.println( "良");}
 		//50 以上なら "可"
-		else if (score > 70) {System.out.println( "可");}
+		else if (score >= 50) {System.out.println( "可");}
 		//50 未満なら "不可"　を表示
 		else {System.out.println("不可");}
 		
@@ -109,13 +113,16 @@ public class Question2 {
 		
 		//Q8
 		//コンソール入力が null または空文字（""）のとき「入力が無効です」と表示する
-		String input = "";
+		System.out.println("コンソール入力してください");
+		Scanner scanner1 = new Scanner(System.in); 
+		String input = scanner1.nextLine();  
 		//「入力が無効です」と表示する
-		if (input == null || input == "") {System.out.println("入力が無効です");}
-		
+		if (input == null || input.isEmpty()) {System.out.println("入力が無効です");}
 		// int 型の変数 day を用意（コンソール入力で1～7 のいずれかの数値を代入）
+		System.out.println("1～7の数値を入力してください");
+		Scanner scanner2 = new Scanner(System.in); 
+		int day = scanner2.nextInt(); 
 		//day の値に応じて曜日を表示
-		int day = 4 ;
 		switch (day) {
 		case 1 :
 			System.out.println("月曜日");
@@ -150,7 +157,9 @@ public class Question2 {
 		
 		//Q10 
 		//int 型の変数 month を用意（コンソール入力で1～12 のいずれかの数値を代入）
-		int month = 5;
+		System.out.println("1～12のいずれかの数値をコンソール入力してください");
+		Scanner  scanner3  = new Scanner(System.in); 
+		int month  =  scanner3 .nextInt();  
 		//month の値に応じて季節を表示
 		switch (month){
 			case 12 :
