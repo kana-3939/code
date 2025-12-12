@@ -115,9 +115,15 @@ public class Question2 {
 		System.out.println();
 		
 		//Q8
+		//改行吸収
+		scanner.nextLine(); 
+		/*
+		 *  ↑やらないとQ7と同時に実行されてしまう
+		 */
+		
 		//コンソール入力が null または空文字（""）のとき「入力が無効です」と表示する
 		System.out.println("コンソール入力してください");
-		String input = scanner.next();  
+		String input = scanner.nextLine();  
 		/*
 		 * ↑  String input = scanner.nextLine();ではうまくできなかった
 		 */
@@ -164,8 +170,7 @@ public class Question2 {
 		//Q10 
 		//int 型の変数 month を用意（コンソール入力で1～12 のいずれかの数値を代入）
 		System.out.println("1～12のいずれかの数値をコンソール入力してください");
-		Scanner  scanner3  = new Scanner(System.in); 
-		int month  =  scanner3 .nextInt();  
+		int month  =  scanner .nextInt();  
 		//month の値に応じて季節を表示
 		switch (month){
 			case 12 :
