@@ -94,8 +94,11 @@ public class Question2 {
 		
 		//Q7
 		// int 型の変数 score にコンソール入力で 0 から 100 のいずれかの数値を代入し
-		System.out.println("0～100で点数を入力してください");
+		System.out.println("0～100で点数をコンソール入力してください");
 		Scanner scanner = new Scanner(System.in); 
+		/*
+		 * 
+		 */
 		score = scanner.nextInt();  
 		//90 以上なら "優"
 		if (score >= 90) {System.out.println( "優");} 
@@ -114,14 +117,17 @@ public class Question2 {
 		//Q8
 		//コンソール入力が null または空文字（""）のとき「入力が無効です」と表示する
 		System.out.println("コンソール入力してください");
-		Scanner scanner1 = new Scanner(System.in); 
-		String input = scanner1.nextLine();  
+		String input = scanner.next();  
+		/*
+		 * ↑  String input = scanner.nextLine();ではうまくできなかった
+		 */
 		//「入力が無効です」と表示する
 		if (input == null || input.isEmpty()) {System.out.println("入力が無効です");}
+		
+		//Q9
 		// int 型の変数 day を用意（コンソール入力で1～7 のいずれかの数値を代入）
 		System.out.println("1～7の数値を入力してください");
-		Scanner scanner2 = new Scanner(System.in); 
-		int day = scanner2.nextInt(); 
+		int day = scanner.nextInt(); 
 		//day の値に応じて曜日を表示
 		switch (day) {
 		case 1 :
