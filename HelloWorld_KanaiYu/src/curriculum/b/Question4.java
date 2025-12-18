@@ -79,13 +79,9 @@ public class Question4 {
 		System.out.println(Arrays.toString(numbersQ5));
 		//		配列のすべての要素を 2 倍 し、結果を表示
 		//		結果を表示する際の処理に拡張for文を使用してください
-		for (int i = 0; i < numbersQ5.length; i++) {
-			numbersQ5[i] *= 2;
-		}
-		System.out.println(Arrays.toString(numbersQ5));
-		for (int i = 0; i < numbersQ5.length; i++) {
-			int j = numbersQ5[i];
-			System.out.println(j);
+		for (int numQ5 : numbersQ5) {
+			numQ5 *= 2;
+			System.out.println(numQ5);
 		}
 
 		/*
@@ -145,9 +141,10 @@ public class Question4 {
 		//		配列の すべての要素を表示
 		int[][] arrayQ7 = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
 		System.out.println(Arrays.deepToString(arrayQ7));
+		// 外側のループで「行」を取り出す
 		for (int i = 0; i < arrayQ7.length; i++) {
 			// 内側のループで「列」（個々の要素）を取り出す
-			for (int j = 0; j < arrayQ7[j].length; j++) {
+			for (int j = 0; j < arrayQ7[i].length; j++) {
 				// array[i][j] が個々の要素にアクセスしている
 				System.out.print(arrayQ7[i][j] + " ");
 			}
