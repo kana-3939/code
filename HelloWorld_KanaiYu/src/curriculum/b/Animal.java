@@ -2,13 +2,12 @@ package curriculum.b;
 
 // Q5
 public class Animal {
-	//（？）なぜ　private　は必要なのか…（？）
 	//動物名
-	private String name;
+	String name;
 	//体長
-	private double length;
+	double length;
 	//速度
-	private int speed;
+	int speed;
 
 	// Setter method
 	public void setName(String name) {

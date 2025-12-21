@@ -5,6 +5,7 @@ public class Main {
 
 		// Q4
 		// Greeting クラスをインポート
+		//※同じパッケージ内ならインポート不要
 		Greeting greeting = new Greeting();
 		// sayHello() を実行
 		greeting.sayHello();
@@ -15,6 +16,7 @@ public class Main {
 
 		// Q5
 		// Animalクラスをインポート
+		//※同じパッケージ内ならインポート不要
 		Animal lion = new Animal();
 
 		// setterで値をセット
