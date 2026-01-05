@@ -1,5 +1,6 @@
 package curriculum.selfIntroduction;
 
+//自己紹介プログラム
 public class Person {
 	// (問題1)インスタンスフィールドを定義
 	public String name;
@@ -18,7 +19,7 @@ public class Person {
 		this.height = height;
 		//(問題4)
 		this.weight = weight;
-	// (問題10)	
+		// (問題10)	
 		count++;
 	}
 
@@ -34,9 +35,9 @@ public class Person {
 		// String.formatなどを使うと小数点以下の桁数を調整できます
 		System.out.printf("BMIは%.1fです\n", this.bmi());
 	}
-	
+
 	// (問題10) 合計人数を出力するメソッド
-    public static int getCount() {
-        return count;
-    }
+	public static int getCount() {
+		return count;
+	}
 }

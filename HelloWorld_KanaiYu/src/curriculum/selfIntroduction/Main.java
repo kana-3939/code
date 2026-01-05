@@ -1,5 +1,6 @@
 package curriculum.selfIntroduction;
 
+//自己紹介プログラム
 public class Main {
 	public static void main(String[] args) {
 		// (問題5) 引数に weight (60) を追加
