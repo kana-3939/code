@@ -1,0 +1,55 @@
+
+--- Turn 1 ---
+Daemon の攻撃！ mi に 12 のダメージ (残りHP: 50)
+
+--- Turn 2 ---
+mi の攻撃！ Daemon に 13 のダメージ (残りHP: 72)
+
+--- Turn 3 ---
+Daemon の攻撃！ mi に 12 のダメージ (残りHP: 38)
+
+--- Turn 4 ---
+mi の攻撃！ Daemon に 13 のダメージ (残りHP: 59)
+
+--- Turn 5 ---
+Daemon の攻撃！ mi に 12 のダメージ (残りHP: 26)
+
+--- Turn 6 ---
+mi の攻撃！ Daemon に 13 のダメージ (残りHP: 46)
+
+--- Turn 7 ---
+Daemon の攻撃！ mi に 12 のダメージ (残りHP: 14)
+
+--- Turn 8 ---
+mi の攻撃！ Daemon に 13 のダメージ (残りHP: 33)
+
+--- Turn 9 ---
+Daemon の攻撃！ mi に 12 のダメージ (残りHP: 2)
+
+--- Turn 10 ---
+mi の攻撃！ Daemon に 13 のダメージ (残りHP: 20)
+
+--- Turn 11 ---
+Daemon の攻撃！ mi に 12 のダメージ (残りHP: 0)
+
+勝者: Daemon !!
+--- Turn 1 ---
+nn の攻撃！ Daemon に 20 のダメージ。 (残りHP: 65)
+--- Turn 2 ---
+Daemon の攻撃！ nn に 12 のダメージ。 (残りHP: 46)
+--- Turn 3 ---
+nn の攻撃！ Daemon に 20 のダメージ。 (残りHP: 45)
+--- Turn 4 ---
+Daemon の攻撃！ nn に 12 のダメージ。 (残りHP: 34)
+--- Turn 5 ---
+nn の攻撃！ Daemon に 20 のダメージ。 (残りHP: 25)
+--- Turn 6 ---
+Daemon の攻撃！ nn に 12 のダメージ。 (残りHP: 22)
+--- Turn 7 ---
+nn の攻撃！ Daemon に 20 のダメージ。 (残りHP: 5)
+--- Turn 8 ---
+Daemon の攻撃！ nn に 12 のダメージ。 (残りHP: 10)
+--- Turn 9 ---
+nn の攻撃！ Daemon に 20 のダメージ。 (残りHP: 0)
+
+勝者: nn !!
