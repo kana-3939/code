@@ -49,5 +49,7 @@ public class Question6 {
 			}
 			System.out.println("--------------------");
 		}
+		//忘れがち
+		scanner.close();
 	}
 }
