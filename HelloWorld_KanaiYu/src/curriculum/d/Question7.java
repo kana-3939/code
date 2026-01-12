@@ -28,6 +28,8 @@ public class Question7 {
 
 		if (daemonData == null) {
 			System.out.println("デーモンデータの読み込みに失敗しました。");
+			//スキャナーを閉じる
+			sc.close();
 			return;
 		}
 		//[名前, HP, AT, SP]からデーモンのそれぞれの値に代入する
@@ -84,7 +86,6 @@ public class Question7 {
 		// 5. 結果出力
 		String winner = (pHp > 0) ? pName : dName;
 		writeLog("\n勝者: " + winner + " !!");
-
 		sc.close();
 	}
 
@@ -118,12 +119,14 @@ public class Question7 {
 	public static void writeLog(String message) {
 		//コンソール表示
 		System.out.println(message);
-		try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("src/curriculum/d/battle_log.txt", true)))) {
+		try (PrintWriter pw = new PrintWriter(
+				new BufferedWriter(new FileWriter("src/curriculum/d/battle_log.txt", true)))) {
 			//	ファイル（battle_log.txt）への追記
 			pw.println(message);
 			// ログ出力エラー
 		} catch (IOException e) {
 			System.err.println("ログの書き込みエラー: " + e.getMessage());
 		}
+
 	}
 }
