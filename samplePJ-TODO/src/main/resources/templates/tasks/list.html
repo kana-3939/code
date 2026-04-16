@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>タスク一覧</title>
+	<link rel="stylesheet" th:href="@{/css/tasks.css}">
+</head>
+
+<body>
+
+	<div class="container">
+		<h1>タスク一覧</h1>
+
+		<div th:if="${#lists.isEmpty(taskList)}" class="empty-message">
+			<p>📢 現在タスクは登録されていません。「新規作成」から追加してください。</p>
+		</div>
+
+		<div class="action-bar" style="text-align: right; margin-bottom: 15px;">
+			<a th:href="@{/tasks/new}" class="btn-new">+ 新規作成</a>
+		</div>
+
+		<table th:if="${!#lists.isEmpty(taskList)}" class="task-table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>タイトル</th>
+					<th>内容</th>
+					<th>登録者</th>
+					<th>開始日</th>
+					<th>終了日</th>
+					<th>作成日時</th>
+					<th>更新日時</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="task : ${taskList}">
+					<td th:text="${task.id}"></td>
+
+					<td th:text="${task.title}"></td>
+
+					<td th:text="${task.content}"></td>
+
+					<td th:text="${task.name}"></td>
+
+					<td th:text="${task.startDate}"></td>
+
+					<td th:text="${task.endDate}"></td>
+
+					<td th:text="${#temporals.format(task.createdAt, 'yyyy-MM-dd HH:mm')}"></td>
+
+					<td th:text="${#temporals.format(task.updatedAt, 'yyyy-MM-dd HH:mm')}"></td>
+
+					<td class="actions">
+						<a th:href="@{/tasks/edit/{id}(id=${task.id})}" class="btn-sm btn-edit">編集</a>
+						<a th:href="@{/tasks/delete/{id}(id=${task.id})}" class="btn-sm btn-delete"
+							onclick="return confirm('本当に削除しますか？')">削除</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+
+</html>

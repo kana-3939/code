@@ -1,0 +1,64 @@
+/* 全体のレイアウト設定 */
+body {
+    background-color: #f8f9fa; /* 清潔感のある薄いグレー */
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 画面の高さ一杯に広げて中央配置 */
+}
+
+/* 中央のコンテンツエリア */
+.top-container {
+    text-align: center;
+}
+
+/* メインタイトル */
+h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+/* ボタンを並べるエリア */
+.button-group {
+    display: flex;
+    gap: 15px; /* ボタン同士の隙間 */
+    justify-content: center;
+}
+
+/* ボタンの基本デザイン */
+.btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px; /* 角を少し丸く */
+    color: white;
+    transition: all 0.3s ease; /* 変化を滑らかに */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ユーザ登録ボタン（緑） */
+.btn-register {
+    background-color: #198754;
+}
+
+.btn-register:hover {
+    background-color: #157347;
+    transform: translateY(-2px); /* 少し浮き上がる */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ログインボタン（青） */
+.btn-login {
+    background-color: #0d6efd;
+}
+
+.btn-login:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}

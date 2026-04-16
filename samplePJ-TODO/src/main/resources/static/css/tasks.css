@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+/* 全体のレイアウト */
+body {
+    background-color: #ffffff;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* タイトル */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* メッセージボックス（タスクが空の時） */
+.empty-message {
+    background-color: #d1ecf1; /* 水色の背景 */
+    color: #0c5460;            /* 濃い青色の文字 */
+    border: 1px solid #bee5eb; /* 枠線 */
+    border-radius: 4px;
+    padding: 15px;
+    text-align: center;
+    margin: 0 auto 20px auto;
+    width: 90%;                /* 横幅を調整 */
+    font-size: 0.95rem;
+}
+
+/* テーブルのコンテナ */
+.table-container {
+    width: 95%;
+    margin: 0 auto;
+}
+
+/* テーブル本体のデザイン */
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* ヘッダー：背景黒、文字白 */
+.task-table th {
+    background-color: #212529;
+    color: #ffffff;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #dee2e6;
+}
+
+/* 各セルのデザイン */
+.task-table td {
+    padding: 12px;
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: middle;
+}
+
+/* 1行おきに背景色を変える */
+.task-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* ボタンの共通スタイル */
+.btn-sm {
+    padding: 5px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #fff;
+    margin-right: 5px;
+    display: inline-block;
+    transition: opacity 0.2s;
+}
+
+.btn-sm:hover {
+    opacity: 0.8;
+}
+
+/* 編集ボタン（青） */
+.btn-edit {
+    background-color: #0d6efd;
+}
+
+/* 削除ボタン（赤） */
+.btn-delete {
+    background-color: #dc3545;
+}
+
+/* ページネーション */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 8px 12px;
+    border: 1px solid #dee2e6;
+    text-decoration: none;
+    color: #0d6efd;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+}
+
+.pagination .active {
+    background-color: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
+}
+
+/* 右下の新規作成ボタンコンテナ */
+.new-task-container {
+    text-align: right;
+    margin-top: 20px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 新規作成ボタン（緑） */
+.btn-new {
+    background-color: #198754;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+.btn-new:hover {
+    background-color: #157347;
+}

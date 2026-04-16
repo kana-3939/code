@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>タスク一覧</title>
+	<link rel="stylesheet" th:href="@{/css/tasks.css}">
+</head>
+
+<body>
+	<h1>タスク一覧</h1>
+
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>タイトル</th>
+			<th>内容</th>
+			<th>登録者</th>
+			<th>開始日</th>
+			<th>終了日</th>
+			<th>作成日時</th>
+			<th>更新日時</th>
+			<th>操作</th>
+		</tr>
+		<tr th:each="task.${tasks}">
+			<td th:text="${task.id}"></td>
+			<td th:text="${task.title}"></td>
+			<td th:text="${task.content}"></td>
+			<td th:text="${task.name}"></td>
+			<td th:text="${task.startDate}"></td>
+			<td th:text="${task.endDate}"></td>
+			<td th:text="${task.createdDate}"></td>
+			<td th:text="${task.updatedDate}"></td>
+			<td>
+				<div class="btn-group">
+					<a th:href="@{/tasks/edit/{id}(id=${task.id})}" class="btn btn-primary">編集</a>
+					<a th:href="@{/tasks/delete/{id}(id=${task.id})}" class="btn btn-danger">削除</a>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<nav aria-label="Page navigation example">
+		<ul class="pagination justify-content-center mt-4">
+			<li class="page-item disabled"><a class="page-link" href="#">« 前</a></li>
+			<li class="page-item active"><a class="page-link" href="#">1</a></li>
+			<li class="page-item"><a class="page-link" href="#">2</a></li>
+			<li class="page-item"><a class="page-link" href="#">次 »</a></li>
+		</ul>
+	</nav>
+
+
+	<a th:href="@{/tasks/new}" class="btn btn-success btn-lg btn-new">＋ 新規作成</a>
+</body>
+
+</html>

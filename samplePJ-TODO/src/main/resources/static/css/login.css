@@ -1,0 +1,89 @@
+/* 全体の背景と中央寄せの設定 */
+body {
+    background-color: #f8f9fa;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* ログインカードの枠線と余白 */
+.login-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #dee2e6; /* スクリーンショットのような薄いグレーの枠線 */
+    border-radius: 4px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+/* 「ログイン」のタイトル */
+h1 {
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 25px;
+}
+
+/* ラベルと入力欄のセット */
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    color: #495057;
+    margin-bottom: 5px;
+}
+
+/* 入力フォームの見た目 */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* 入力中に青い枠線が出るようにする（フォーカス時） */
+input:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* ログインボタン（鮮やかな青色） */
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    background-color: #0d6efd; /* スクリーンショットの青色 */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #0b5ed7;
+}
+
+/* エラーメッセージ（もし表示する場合） */
+.error-message {
+    color: #dc3545;
+    font-size: 13px;
+    margin-bottom: 15px;
+    background-color: #f8d7da;
+    padding: 8px;
+    border-radius: 4px;
+}

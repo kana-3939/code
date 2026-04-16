@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+/* 全体のレイアウト設定 */
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+/* コンテナ（フォームを中央寄りにする） */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+}
+
+/* 各入力グループの余白 */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* 入力欄のデザイン */
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* paddingを含めて幅100%にする */
+    font-size: 1rem;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical; /* 縦方向にだけ伸ばせるようにする */
+}
+
+/* 入力欄にフォーカスした時の色 */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+/* ボタンエリア */
+.button-group {
+    margin-top: 2rem;
+    display: flex;
+    gap: 10px;
+}
+
+/* 更新ボタン */
+.btn-update {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-update:hover {
+    background-color: #0056b3;
+}
+
+/* キャンセルボタン */
+.btn-cancel {
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+.btn-cancel:hover {
+    background-color: #5a6268;
+}

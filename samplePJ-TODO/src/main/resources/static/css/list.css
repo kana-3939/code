@@ -1,0 +1,47 @@
+/* テーブル全体の幅を広げる */
+.table-container {
+    width: 98%; /* 画面端まで使う */
+    margin: 0 auto;
+    overflow-x: auto; /* 項目が多いので、画面が狭い時は横スクロールできるようにする */
+}
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px; /* 項目が多いので少し文字を小さくすると2枚目に近くなります */
+}
+
+/* ヘッダーのデザイン */
+.task-table th {
+    background-color: #212529;
+    color: white;
+    padding: 12px 8px;
+    text-align: left;
+}
+
+/* 偶数行に背景色をつけて「シマシマ」にする */
+.task-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.btn-sm {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 2px;
+}
+
+.btn-edit {
+    background-color: #007bff; /* 鮮やかな青 */
+}
+
+.btn-delete {
+    background-color: #dc3545; /* 鮮やかな赤 */
+}
+
+.btn-edit:hover, .btn-delete:hover {
+    opacity: 0.8;
+}

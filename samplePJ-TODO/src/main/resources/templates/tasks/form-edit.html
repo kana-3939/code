@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>タスク編集</title>
+    <link rel="stylesheet" th:href="@{/css/task-form.css}">
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>タスク編集</h1>
+        
+        <form th:action="@{/tasks/update}" th:object="${task}" method="post">
+            
+            <input type="hidden" th:field="*{id}">
+
+            <div class="input-group">
+                <label>タイトル</label>
+                <input type="text" th:field="*{title}" required>
+            </div>
+
+            <div class="input-group">
+                <label>内容</label>
+                <textarea th:field="*{content}" rows="3"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label>登録者</label>
+                <input type="text" th:field="*{name}">
+            </div>
+
+            <div class="input-group">
+                <label>開始日</label>
+                <input type="date" th:field="*{startDate}">
+            </div>
+
+            <div class="input-group">
+                <label>終了日</label>
+                <input type="date" th:field="*{endDate}">
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="btn-update">更新</button>
+                <a th:href="@{/tasks}" class="btn-cancel">← キャンセル</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
