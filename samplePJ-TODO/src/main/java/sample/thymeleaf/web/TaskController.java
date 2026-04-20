@@ -1,6 +1,7 @@
 package sample.thymeleaf.web;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpSession; // セッションを使うために必要
 import sample.common.dao.entity.Login;
 import sample.common.dao.entity.Task;
 import sample.common.service.TaskService;
@@ -39,17 +40,17 @@ public class TaskController {
 
     /** タスクの保存処理 (新規作成) */
     @PostMapping("/save")
-    public String save(@ModelAttribute Task task, Model model, HttpSession session) {
-        // 1. バリデーション実行
-        if (hasErrors(task, model)) {
-            return "tasks/form-new"; // エラーがあれば入力画面に戻る
-        }
-
-        // 2. ログインチェックと保存
+    public String save(@ModelAttribute Task task, HttpSession session) {
+        // セッションからログインユーザー情報を取得
         Login loginUser = (Login) session.getAttribute("user");
-        if (loginUser == null) return "redirect:/login";
-
+        
+        if (loginUser == null) {
+            return "redirect:/login"; // ログインしてなければログイン画面へ
+        }
+        
+        // ログイン中のユーザー名をセット
         task.setUsername(loginUser.getUsername());
+        
         taskService.saveTask(task);
         return "redirect:/tasks";
     }
@@ -64,66 +65,25 @@ public class TaskController {
 
     /** 更新処理 */
     @PostMapping("/update")
-    public String update(@ModelAttribute Task task, Model model, HttpSession session) {
-        // 1. バリデーション実行
-        if (hasErrors(task, model)) {
-            return "tasks/form-edit"; // エラーがあれば編集画面に戻る
-        }
-
-        // 2. ログインチェックと更新
+    public String update(@ModelAttribute Task task, HttpSession session) {
+        // セッションからログインユーザー情報を取得
         Login loginUser = (Login) session.getAttribute("user");
-        if (loginUser == null) return "redirect:/login";
-
+        
+        if (loginUser == null) {
+            return "redirect:/login";
+        }
+        
+        // 更新時も username をセット（DBの非NULL制約エラーを防ぐため）
         task.setUsername(loginUser.getUsername());
+        
         taskService.updateTask(task);
         return "redirect:/tasks";
     }
 
     /** 削除処理 */
-    @PostMapping("/delete/{id}")
+    @GetMapping("/delete/{id}")
     public String delete(@PathVariable("id") Integer id) {
         taskService.deleteTask(id);
         return "redirect:/tasks";
-    }
-
-    /**
-     * 【共通バリデーションメソッド】
-     * アノテーションを使わずに手動でチェックします
-     */
-    private boolean hasErrors(Task task, Model model) {
-        boolean error = false;
-
-        // タイトルチェック
-        if (task.getTitle() == null || task.getTitle().isBlank()) {
-            model.addAttribute("err_title", "タイトルを入力してください");
-            error = true;
-        } else if (task.getTitle().length() > 50) {
-            model.addAttribute("err_title", "タイトルは50文字以内で入力してください");
-            error = true;
-        }
-
-        // 内容チェック
-        if (task.getContent() == null || task.getContent().isBlank()) {
-            model.addAttribute("err_content", "内容を入力してください");
-            error = true;
-        }
-
-        // 登録者名チェック
-        if (task.getName() == null || task.getName().isBlank()) {
-            model.addAttribute("err_name", "登録者名を入力してください");
-            error = true;
-        }
-
-        // 日付チェック
-        if (task.getStartDate() == null) {
-            model.addAttribute("err_startDate", "開始日を入力してください");
-            error = true;
-        }
-        if (task.getEndDate() == null) {
-            model.addAttribute("err_endDate", "終了日を入力してください");
-            error = true;
-        }
-
-        return error;
     }
 }

@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <title>タスク編集</title>
     <link rel="stylesheet" th:href="@{/css/task-form.css}">
-    <style>
-        .error-message { color: red; font-size: 0.9em; margin-top: 5px; }
-    </style>
 </head>
 <body>
 
@@ -19,32 +16,27 @@
 
             <div class="input-group">
                 <label>タイトル</label>
-                <input type="text" th:field="*{title}">
-                <p class="error-message" th:if="${err_title}" th:text="${err_title}"></p>
+                <input type="text" th:field="*{title}" required>
             </div>
 
             <div class="input-group">
                 <label>内容</label>
                 <textarea th:field="*{content}" rows="3"></textarea>
-                <p class="error-message" th:if="${err_content}" th:text="${err_content}"></p>
             </div>
 
             <div class="input-group">
                 <label>登録者</label>
                 <input type="text" th:field="*{name}">
-                <p class="error-message" th:if="${err_name}" th:text="${err_name}"></p>
             </div>
 
             <div class="input-group">
                 <label>開始日</label>
                 <input type="date" th:field="*{startDate}">
-                <p class="error-message" th:if="${err_startDate}" th:text="${err_startDate}"></p>
             </div>
 
             <div class="input-group">
                 <label>終了日</label>
                 <input type="date" th:field="*{endDate}">
-                <p class="error-message" th:if="${err_endDate}" th:text="${err_endDate}"></p>
             </div>
 
             <div class="button-group">
