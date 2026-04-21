@@ -5,25 +5,16 @@ import org.springframework.stereotype.Repository;
 import sample.common.dao.entity.Login;
 import sample.common.dao.mapper.LoginMapper;
 
-@Repository // このクラスがDBアクセスを担当することを示す魔法
+@Repository
 public class LoginDao {
-
     @Autowired
-    private LoginMapper loginMapper; // 倉庫番（Mapper）を呼び出す
+    private LoginMapper loginMapper;
 
-    /**
-     * ユーザー名とパスワードを元にユーザー情報を1件取得する
-     */
-    public Login findUser(String username, String password) {
-        // Mapper（XMLのSQL）を呼び出して結果を返す
-        return loginMapper.findByUsernameAndPassword(username, password);
+    public Login findByUsername(String username) {
+        return loginMapper.findByUsername(username);
     }
     
-    /**
-     * 新しいユーザーを登録する
-     */
-    public int insertUser(String username, String password) {
-        // Mapper（倉庫番）にお願いして、DBに保存してもらう
-        return loginMapper.insert(username, password);
+    public int insertUser(String username, String hashedPassword) {
+        return loginMapper.insert(username, hashedPassword);
     }
 }

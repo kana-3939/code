@@ -6,10 +6,9 @@ import sample.common.dao.entity.Login;
 
 @Mapper
 public interface LoginMapper {
-    
-    // ログイン用（既存）
-    Login findByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
+    // パスワードによる絞り込みを削除
+    Login findByUsername(@Param("username") String username);
 
-    // 【追加】ユーザー登録用
-    int insert(@Param("username") String username, @Param("password") String password);
+    // 引数名をハッシュ化を意識したものに変更
+    int insert(@Param("username") String username, @Param("password") String hashedPassword);
 }
